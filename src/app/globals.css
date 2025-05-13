@@ -1,0 +1,189 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #1d1c1c;
+  color: white;
+}
+boby{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.container{
+  max-width: 800px;
+  margin-top: 18px;
+  padding: 20px;
+}
+.top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+.app{
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(17, 239, 28);
+  margin: 0;
+}
+.botao_adiciona{
+  background-color: rgb(45, 235, 45);
+  border: none;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  margin-left: 20px;
+}
+.botao_adiciona:focus{
+  outline: none;
+}
+.botao_adiciona:hover{
+  background-color: rgb(45, 235, 45);
+}
+
+.caixas{
+  display: flex;
+  gap: 24px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+.box{
+  flex: 1;
+  min-width: 220px ;
+  background-color: black;
+  padding: 16px;
+  border-radius: 8px;
+}
+.box h3{
+  margin-top: 0;
+  font-size: 18px;
+  background-color:black ;
+}
+.valor{
+  font-size: 18px;
+  font-weight: bold;
+  margin: 8px 0;
+  background-color: black;
+  color: rgb(45, 235, 45);
+}
+.valor.saida{
+  color: #e74c3c;
+}
+@media(max-width:768px){
+  .caixas{
+    flex-direction: column;
+  }
+}
+.text{
+  background-color: black;
+  font-size: 18px;
+  color: rgb(75, 78, 75);
+}
+.analise{
+  display: flex;
+  gap: 24px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+.infor{
+  flex: 2;
+}
+.infor h2{
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+.box-analise{
+  height: 300px;
+  background-color:black;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.cat{
+  flex: 1;
+  margin-top: 8px;
+}
+.cat h2{
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+}
+.cat ul{
+  background-color: black;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 8px;
+}
+.categoria{
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  
+}
+.categoria:hover{ 
+  background-color: #2c2c2c;
+}
+.categoria.nome{
+  flex: 1;
+  margin-left: 8px;
+}
+.categoria.quantidade,.categoria.valor{
+  font-weight: bold;
+  align-items: center;
+}
+
+.valor_cat{
+  color: #e74c3c;
+}
+.analise-cat{
+  display: flex;
+  gap: 24px;
+  margin-top: 32px;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
+
+.transacoes{
+  margin-top: 24px;
+}
+.transacoes h2{
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+.tabela{
+  border-radius: 8px;
+  overflow: auto;
+  padding: 8px;
+}
+.table{
+  width: 100%;
+  border-collapse:collapse ;
+}
+.table thead{
+  background-color: #2c2c2c;
+}
+.table th, .table td{
+  padding: 12px 16px;
+  text-align: left;
+}
+.table th.dados{
+  color: rgb(75, 78, 75);
+}
+.table td.valor2{
+  color: #e74c3c;
+}
+.table tr{
+  background-color: black;
+  border-radius: 8px;
+  margin-bottom: 10p;
+}
