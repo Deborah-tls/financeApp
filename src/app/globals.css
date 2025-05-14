@@ -5,27 +5,26 @@
   background-color: #1d1c1c;
   color: white;
 }
-boby{
-  font-family: 'Times New Roman', Times, serif;
-}
-
+ 
 .container{
-  max-width: 800px;
-  margin-top: 18px;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: start;
+  align-items: start;
+  height: 100vh;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
 }
-.top{
+header{
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 32px;
+  flex-direction: row;
+  width: 100%;
 }
-.app{
-  font-size: 24px;
-  font-weight: bold;
-  color: rgb(17, 239, 28);
-  margin: 0;
-}
+
 .botao_adiciona{
   background-color: rgb(45, 235, 45);
   border: none;
@@ -34,9 +33,6 @@ boby{
   height: 40px;
   border-radius: 10%;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   outline: none;
   margin-left: 20px;
 }
@@ -87,9 +83,13 @@ boby{
 }
 .analise{
   display: flex;
-  gap: 24px;
-  margin-top: 32px;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+  max-height: 100%;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+
 }
 .infor{
   flex: 2;
@@ -99,10 +99,12 @@ boby{
   font-size: 1.5rem;
 }
 .box-analise{
-  height: 300px;
+  display: flex;
+  flex-direction: row;
+  height:300px ;
   background-color:black;
   border-radius: 8px;
-  padding: 16px;
+  padding: 1rem;
 }
 
 .cat{
@@ -186,4 +188,5 @@ boby{
   background-color: black;
   border-radius: 8px;
   margin-bottom: 10p;
+  gap: 1rem;
 }

@@ -1,10 +1,12 @@
+import { CircleDollarSign, HandCoins } from "lucide-react";
+
 export default function Home(){
   return(
     <main className="container">
-      <div className="top">
-        <h1 className="app"> icone</h1>
+      <header>
+        <div> <CircleDollarSign /> </div>
         <button className="botao_adiciona"> + </button>
-      </div>
+      </header>
 
       <section className="caixas">
         <div className="box entrada">

@@ -15,6 +15,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Finance",
   description: "Gerencie suas finanças aqui!",
+  icons:{
+    icon:"favicon.ico"
+  }
+  
 };
 
 export default function RootLayout({
