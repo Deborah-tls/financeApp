@@ -35,15 +35,9 @@ export default function NovaTransacao() {
 
   return (
     <main className="container-transacao">
-      <header className="topo">
-        <div className='iconTransacao'>
-          <PiggyBankIcon color="rgba(64, 164, 53, 0.831)" size={40} />
-        </div>
-        
-      </header>
-
     <div className='form' >
       <h2>Nova Transação</h2>
+      <span className='subi'>Inclua suas entradas e saída sem compicações!</span>
       <form className="formulario" onSubmit={handleSubmit}>
           <input className="input" type="text" placeholder="Categoria" />
           <input className="input" type="text" placeholder="Descrição" />

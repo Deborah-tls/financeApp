@@ -4,9 +4,6 @@ import { BanknoteArrowDownIcon, BanknoteArrowUpIcon, BanknoteIcon, BusIcon, Grad
 
 import TransacoesTable from "@/components/transacioes/transactions";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
-
-
 
 export default function Home(){
   const router = useRouter();
