@@ -1,117 +1,92 @@
-import { CircleDollarSign, HandCoins } from "lucide-react";
+'use client';
+
+import { BanknoteArrowDownIcon, BanknoteArrowUpIcon, BanknoteIcon, BusIcon, GraduationCapIcon, PiggyBankIcon, PillIcon, UtensilsIcon, VolleyballIcon } from "lucide-react";
+
+import TransacoesTable from "@/components/transacioes/transactions";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+
+
 
 export default function Home(){
+  const router = useRouter();
+
   return(
     <main className="container">
       <header>
-        <h1>Christian Cesar Teste de Commint</h1>
-        <div> <CircleDollarSign /> </div>
-        <button className="botao_adiciona"> + </button>
+        <div> <PiggyBankIcon color=" rgba(64, 164, 53, 0.831)" size={40}/> </div>
+        <button className="botao_adiciona"  onClick={() =>router.push('/nova-transacao')}> + </button>
       </header>
 
       <section className="caixas">
         <div className="box entrada">
-          <h3>Entradas</h3>
+         <div className="box_icon">
+           <h3> Entradas</h3>
+           <BanknoteArrowDownIcon /></div>
           <p className="valor">R$7.840,45</p>
           <span className="text">Somada todas as entradas do período.</span>
         </div>
+
         <div className="box saida">
-          <h3>Saídas</h3>
+          <div className="box_icon">
+            <h3>Saídas</h3>
+            <BanknoteArrowUpIcon/> </div>
           <p className="valor saida">R$1.580,45</p>
           <span className="text">Somada todas as saídas do período.</span>
         </div>
+
         <div className="box balanco">
-          <h3>Balanço</h3>
+          <div className="box_icon">
+            <h3>Balanço</h3>
+             <BanknoteIcon /></div>
           <p className="valor">R$6.260,11</p>
           <span className="text">Somada todas as entradas e saídas do período.</span>
         </div>
       </section>
 
       <section className="analise">
-
-          <div className="infor">
-            <h2>Análise</h2>
-            <div className="box-analise"></div>
-          </div>
-
-          <div className="cat">
-            <h2>Categorias</h2>
-            <ul>
-              <li className="categoria destaque">
-                <span className="nome destaque">Alimentação</span>
-                <span className="quantidade destaque">10</span>
-                <span className="valor_cat destaque">R$1.508,15</span>
-              </li>
-
-              <li className="categoria">
-                <span className="nome">Mercado</span>
-                <span className="quantidade">8</span>
-                <span className="valor_cat">R$1.508,15</span>
-              </li>
-
-              <li className="categoria">
-                <span className="nome">Presentes</span>
-                <span className="quantidade">2</span>
-                <span className="valor_cat">R$350,19</span>
-              </li>
-
-              <li className="categoria">
-                <span className="nome">Farmacia</span>
-                <span className="quantidade">1</span>
-                <span className="valor_cat">R$700,00</span>
-              </li>
-
-              <li className="categoria">
-                <span className="nome">Combustível</span>
-                <span className="quantidade">1</span>
-                <span className="valor_cat">R$349,57</span>
-              </li>
-            </ul>
-          </div>
-        
-      </section>
-
-      <section className="transacoes">
-        <h2>Transações</h2>
-
-        <div className="tabela">
-          <table className="table">
-            <thead>
-              <tr>
-                <th className="dados">Descrição</th>
-                <th className="dados">Tipo</th>
-                <th className="dados">Valor</th>
-                <th className="dados">Banco</th>
-                <th className="dados">Data</th>
-                <th className="dados">Parcelas</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Supermercado Big Master</td>
-                <td>Crédito</td>
-                <td className="valor2">R$896,00</td>
-                <td>Nubank</td>
-                <td>21/03/2025</td>
-                <td>1/1</td>
-              </tr>
-
-              <tr>
-                <td>Supermercado Big Master</td>
-                <td>Crédito</td>
-                <td className="valor2">R$896,00</td>
-                <td>Nubank</td>
-                <td>21/03/2025</td>
-                <td>1/1</td>
-              </tr>
-
-            </tbody>
-          </table>
+        <div className="infor">
+          <h2>Gráfico de Análise</h2>
+          <div className="box-analise"></div>
         </div>
-      </section>
 
-
-
+        <div className="cat">
+          <h2>Categorias</h2>
+          <ul className="lista-cat">
+            <li className="item-cat">
+              <div className="icone"><UtensilsIcon /></div>
+              <div className="nome">Alimentação</div>
+              <div className="quantidade">10</div>
+              <div className="valor_cat">R$1.508,15</div>
+            </li>
+            <li className="item-cat">
+              <div className="icone"><BusIcon /></div>
+              <div className="nome">Transporte</div>
+              <div className="quantidade">8</div>
+              <div className="valor_cat">R$1.508,15</div>
+            </li>
+            <li className="item-cat">
+              <div className="icone"><VolleyballIcon /></div>
+              <div className="nome">Lazer</div>
+              <div className="quantidade">2</div>
+              <div className="valor_cat">R$350,19</div>
+            </li>
+            <li className="item-cat">
+              <div className="icone"><PillIcon /></div>
+              <div className="nome">Saúde</div>
+              <div className="quantidade">1</div>
+              <div className="valor_cat">R$700,00</div>
+            </li>
+            <li className="item-cat">
+              <div className="icone"><GraduationCapIcon /></div>
+              <div className="nome">Educação</div>
+              <div className="quantidade">1</div>
+              <div className="valor_cat">R$349,57</div>
+            </li>
+          </ul>
+        </div>
+       </section>
+       <TransacoesTable />
     </main>
   )
 }

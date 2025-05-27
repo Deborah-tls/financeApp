@@ -1,9 +1,13 @@
+@import "tailwindcss";
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   background-color: #1d1c1c;
   color: white;
+  font-family: poopins;
+  font-weight: bold;
 }
  
 .container{
@@ -14,7 +18,6 @@
   align-items: start;
   height: 100vh;
   max-width: 1000px;
-  width: 100%;
   margin: 0 auto;
   padding: 1rem;
 }
@@ -22,7 +25,7 @@ header{
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  width: 100%;
+  width:100%;
 }
 
 .botao_adiciona{
@@ -31,7 +34,7 @@ header{
   font-size: 24px;
   width: 40px;
   height: 40px;
-  border-radius: 10%;
+  border-radius: 8px;
   cursor: pointer;
   outline: none;
   margin-left: 20px;
@@ -45,24 +48,30 @@ header{
 
 .caixas{
   display: flex;
-  gap: 24px;
-  margin-bottom: 32px;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 0;
   flex-wrap: wrap;
+  width: 100%;
 }
 .box{
   flex: 1;
-  min-width: 220px ;
   background-color: black;
-  padding: 16px;
+  padding: 8px;
   border-radius: 8px;
+}
+.box_icon{
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
 }
 .box h3{
   margin-top: 0;
-  font-size: 18px;
+  font-size: 24px;
   background-color:black ;
 }
 .valor{
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bold;
   margin: 8px 0;
   background-color: black;
@@ -81,112 +90,226 @@ header{
   font-size: 18px;
   color: rgb(75, 78, 75);
 }
-.analise{
+
+.analise {
   display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  max-height: 100%;
-  align-items: center;
-  padding: 1rem;
   gap: 1rem;
-
-}
-.infor{
-  flex: 2;
-}
-.infor h2{
-  margin-bottom: 10px;
-  font-size: 1.5rem;
-}
-.box-analise{
-  display: flex;
-  flex-direction: row;
-  height:300px ;
-  background-color:black;
-  border-radius: 8px;
-  padding: 1rem;
-}
-
-.cat{
-  flex: 1;
-  margin-top: 8px;
-}
-.cat h2{
-  margin-bottom: 5px;
-  font-size: 1.5rem;
-}
-.cat ul{
-  background-color: black;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  border-radius: 8px;
-}
-.categoria{
-  background-color: black;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 16px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  
-}
-.categoria:hover{ 
-  background-color: #2c2c2c;
-}
-.categoria.nome{
-  flex: 1;
-  margin-left: 8px;
-}
-.categoria.quantidade,.categoria.valor{
-  font-weight: bold;
-  align-items: center;
-}
-
-.valor_cat{
-  color: #e74c3c;
-}
-.analise-cat{
-  display: flex;
-  gap: 24px;
-  margin-top: 32px;
-  align-items: flex-start;
-  flex-wrap: nowrap;
-}
-
-.transacoes{
-  margin-top: 24px;
-}
-.transacoes h2{
-  font-size: 1.4rem;
-  margin-bottom: 12px;
-}
-.tabela{
-  border-radius: 8px;
-  overflow: auto;
-  padding: 8px;
-}
-.table{
   width: 100%;
-  border-collapse:collapse ;
+  /* height: 324px; */
+  align-items: stretch;
 }
-.table thead{
-  background-color: #2c2c2c;
+.infor {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
-.table th, .table td{
-  padding: 12px 16px;
-  text-align: left;
+.cat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
 }
-.table th.dados{
-  color: rgb(75, 78, 75);
+.infor h2,
+.cat h2 {
+  font-size: 1.5rem;
 }
-.table td.valor2{
-  color: #e74c3c;
-}
-.table tr{
+.box-analise {
   background-color: black;
   border-radius: 8px;
-  margin-bottom: 10p;
+  width: 100%;
+  height: 316px;
+  flex: 1;
+}
+
+.lista-cat {
+  flex: 1;
+  background-color: black;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item-cat {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background-color: black;
+  transition: background-color 0.3s ease;
+}
+
+.item-cat:hover {
+  background-color: #2c2c2c;
+}
+
+.icone {
+  width: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.nome {
+  flex: 2;
+  background-color: black;
+}
+
+.quantidade {
+  flex: 1;
+  text-align: center;
+  background-color: black;
+}
+
+.valor_cat {
+  flex: 1;
+  text-align: right;
+  color: #e74c3c;
+  background-color: black;
+}
+
+.transacoes {
+  flex: 1;
+  width: 100%;
+}
+
+.transacoes h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.tabela {
+  flex: 1;
+  max-height: 164px;
+  overflow-y: auto;
+  border-radius: 8px;
+  background-color: black;
+}
+.tabela::-webkit-scrollbar {
+  width: 8px;
+}
+.tabela::-webkit-scrollbar-track {
+  background: #1e1e1e;
+  border-radius: 8px;
+}
+.tabela::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 8px;
+  border: 2px solid #1e1e1e; 
+}
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 6px;
+  min-width: 600px;
+}
+
+.table th {
+  text-align: left;
+  padding: 12px;
+  font-weight: 600;
+  color: rgb(110, 109, 109);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.table td{
+  padding: 16px;
+  background-color: black;
+}
+.table tbody tr:hover{
+  background-color: #333;
+}
+.dados{
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.valor2 {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+/* nova transacao */
+
+.container-transacao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  height: 100vh;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
   gap: 1rem;
+}
+
+.topo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 1rem;
+}
+
+.form{
+  border-radius: 8px;
+  background-color: rgb(8, 8, 8);
+}
+.form h2{
+  font-size: 1.5rem;
+  color:rgb(45, 235, 45);
+  font-family: Poppins;
+  font-weight: bolder;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 8px;
+  background-color:rgb(8, 8, 8);
+}
+
+.formulario {
+  padding: 2rem;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: rgb(8, 8, 8);
+}
+
+.formulario input {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 6px;
+  border: 1px solid rgb(47, 46, 46);
+}
+
+.botoes {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.botoes button {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.3s;
+}
+.cancelar{
+  background-color:  #e74c3c;
+}
+.salvar{
+  background-color:rgb(45, 235, 45);
+}
+.botoes button:hover {
+  background-color: rgba(179, 199, 205, 0.831);
 }
